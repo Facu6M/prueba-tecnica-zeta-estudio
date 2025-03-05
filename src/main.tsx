@@ -1,10 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { NextUIProvider } from "@nextui-org/react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/index.css";
+import Router from "./providers/router";
+import ToastProvider from "./providers/Toasts";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <ToastProvider>
+      <NextUIProvider>
+        <Router />
+      </NextUIProvider>
+    </ToastProvider>
+  </React.StrictMode>
+);
