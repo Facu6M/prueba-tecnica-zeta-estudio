@@ -8,7 +8,6 @@ function App() {
     <AuthProvider>
       <Header />
       <MyComponent />
-
       <Footer />
     </AuthProvider>
   );
